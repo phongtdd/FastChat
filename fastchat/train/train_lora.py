@@ -25,7 +25,8 @@ from deepspeed import zero
 from deepspeed.runtime.zero.partition_parameters import ZeroParamStatus
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 import transformers
-from transformers import Trainer, BitsAndBytesConfig, deepspeed
+from transformers import Trainer, BitsAndBytesConfig
+from transformers.integrations import deepspeed
 import torch
 
 from fastchat.train.train import (
@@ -115,7 +116,7 @@ def train():
     if training_args.flash_attn:
         replace_llama_attn_with_flash_attn()
 
-    device_map = None
+    device_map = 'auto'
     world_size = int(os.environ.get("WORLD_SIZE", 1))
     ddp = world_size != 1
     if lora_args.q_lora:
