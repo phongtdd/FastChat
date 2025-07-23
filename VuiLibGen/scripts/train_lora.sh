@@ -1,4 +1,4 @@
-deepspeed fastchat\train\train_lora.py \
+deepspeed fastchat/train/train_lora.py \
     --model_name_or_path $PATH_TO_MODEL \
     --lora_r 8 \
     --lora_alpha 16 \
@@ -6,7 +6,7 @@ deepspeed fastchat\train\train_lora.py \
     --data_path $DATA_PATH \
     --eval_data_path $EVAL_DATA_PATH \
     --bf16 True \
-    --output_dir /kaggle/working/checkpoints \
+    --output_dir $PATH_TO_OUTPUT \
     --num_train_epochs 3 \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \

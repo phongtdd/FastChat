@@ -25,11 +25,6 @@ Use the script in the `scripts` folder to fine-tune the model.
 Update `Path-to-model`, `data-path`, and `eval-data-path` with the actual paths.
 
 # Infer
-## Install dependency
-```
-cd infer
-pip3 install -e reuqirements.txt
-```
 ## Set up local search 
 In file post.py, replace maven path with actual maven_corpus path in your folder
 ## Testing 

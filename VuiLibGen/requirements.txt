@@ -1,2 +1,6 @@
 bitsandbytes
 deepspeed
+Levenshtein
+transformers
+datasets
+peft
